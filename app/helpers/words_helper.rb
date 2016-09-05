@@ -1,5 +1,5 @@
 module WordsHelper
-  def self.findAnagrams(words, word, limit)
+  def self.findAnagrams(words, word, limit=nil)
     anagram = {'anagrams' => []}
     
     # Sanity check
@@ -22,6 +22,14 @@ module WordsHelper
       wordcompareHash = makeHashTable(wordcompare.word)
       if (wordcompareHash == wordHash)
         anagram['anagrams'] << wordcompare.word
+
+        # Break once on limit
+        unless limit.nil?
+          limit -= 1
+          if limit < 1
+            break
+          end
+        end
       end
     end
     
@@ -31,7 +39,7 @@ module WordsHelper
   # Build hashtable by character and number of times character is in word
   def self.makeHashTable(word)
     hashtable = {}
-    word.each_char do |c|
+    word.downcase.each_char do |c|
       if (hashtable.key?(c))
         hashtable[c] += 1
       else

@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  word: MyString
-  wordsize: 
+  word: read
+  wordsize: 4
 
 two:
-  word: MyString
-  wordsize: 
+  word: dear
+  wordsize: 4
+
+three:
+  word: dare
+  wordsize: 4
