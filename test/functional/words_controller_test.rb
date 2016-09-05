@@ -4,6 +4,7 @@ class WordsControllerTest < ActionController::TestCase
   test "should get show" do
     get :show, id: "read", format: 'json'
     assert_response :success
+    assert_equal(200, @response.status)
     
     # Parse to json and compare
     responsejson = JSON.parse(@response.body)
@@ -16,6 +17,7 @@ class WordsControllerTest < ActionController::TestCase
     # Find anagrams for "read"
     get :anagram, id: "read", format: "json"
     assert_response :success
+    assert_equal(200, @response.status)
     
     responsejson = JSON.parse(@response.body)
     assert_not_nil(responsejson)
@@ -28,6 +30,7 @@ class WordsControllerTest < ActionController::TestCase
     # Find anagrams for "read" with limit of 1
     get :anagram, id: "read", format: "json", limit: 1
     assert_response :success
+    assert_equal(200, @response.status)
     
     responsejson = JSON.parse(@response.body)
     assert_not_nil(responsejson)
@@ -39,6 +42,7 @@ class WordsControllerTest < ActionController::TestCase
     # Make sure no anagrams found
     get :anagram, id: "zyxwv", format: "json"
     assert_response :success
+    assert_equal(200, @response.status)
     
     responsejson = JSON.parse(@response.body)
     assert_not_nil(responsejson)
@@ -49,10 +53,12 @@ class WordsControllerTest < ActionController::TestCase
   test "should create words" do
     post :create, words: ["myString", "stringMy", "ingStrYm"], format: "json"
     assert_response :success
+    assert_equal(201, @response.status)
     
     # Retrieve the added items as anagrams
     get :anagram, id: "mystring", format: "json"
     assert_response :success
+    assert_equal(200, @response.status)
     
     responsejson = JSON.parse(@response.body)
     expected_anagrams = %w(ingstrym stringmy)
@@ -62,10 +68,13 @@ class WordsControllerTest < ActionController::TestCase
   test "should delete all words" do
     delete :destroy_all, format: 'json'
     assert_response :success
+    assert_equal(204, @response.status)
     
     # Make sure no more anagrams are returned
     get :anagram, id: "read", format: "json"
     assert_response :success
+    assert_equal(200, @response.status)
+
     responsejson = JSON.parse(@response.body)
     assert_empty(responsejson['anagrams'])
   end
@@ -74,11 +83,14 @@ class WordsControllerTest < ActionController::TestCase
     3.times do
       delete :destroy_all, format: 'json'
       assert_response :success
+      assert_equal(204, @response.status)
     end
     
     # Make sure no more anagrams are returned
     get :anagram, id: "read", limit: 1, format: "json"
     assert_response :success
+    assert_equal(200, @response.status)
+
     responsejson = JSON.parse(@response.body)
     assert_empty(responsejson['anagrams'])
   end
@@ -86,10 +98,13 @@ class WordsControllerTest < ActionController::TestCase
   test "should delete single word" do
     delete :destroy, id: "dear", format: 'json'
     assert_response :success
+    assert_equal(200, @response.status)
     
     # At least 1 anagram should be returned
     get :anagram, id: "read", limit: 1, format: "json"
     assert_response :success
+    assert_equal(200, @response.status)
+
     responsejson = JSON.parse(@response.body)
     assert_equal(responsejson['anagrams'],["dare"])
   end

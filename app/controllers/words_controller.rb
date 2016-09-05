@@ -46,7 +46,7 @@ class WordsController < ApplicationController
     end
     
     respond_to do |format|
-      format.json { head :ok }
+      format.json { head :created }
     end
   end
 
