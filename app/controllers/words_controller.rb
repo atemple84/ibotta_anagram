@@ -12,7 +12,10 @@ class WordsController < ApplicationController
   # GET /words/1
   # GET /words/1.json
   def show
-    curWord = params[:id]
+    curWord = Word.find_by_word(params[:id])
+    respond_to do |format|
+      format.json { render json: curWord }
+    end
   end
   
   # GET /anagrams/1
@@ -20,9 +23,14 @@ class WordsController < ApplicationController
   def anagram
     # Reduce subset of words searched by word size
     wordsubset = Word.find_all_by_wordsize(params[:id].size)
-    
-    # Find anagrams 
-    anagrams = WordsHelper.findAnagrams(wordsubset, params[:id], params[:limit])
+
+    limit = nil
+    unless params[:limit].nil?
+      limit = params[:limit].to_i
+    end
+
+    # Find anagrams
+    anagrams = WordsHelper.findAnagrams(wordsubset, params[:id], limit)
 
     respond_to do |format|
       format.json { render json: anagrams }

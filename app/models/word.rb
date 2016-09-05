@@ -8,6 +8,7 @@ class Word < ActiveRecord::Base
   def init
     unless self.word.nil?
       self.wordsize = self.word.size
+      self.word = self.word.downcase
     end
   end
 end

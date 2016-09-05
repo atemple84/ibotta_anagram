@@ -14,7 +14,7 @@ module WordsHelper
     # Go through word list. Already know they are all of same size
     words.each do |wordcompare|
       # skip over identical word
-      if (wordcompare.word == word)
+      if (wordcompare.word == word.downcase)
         next
       end
       
