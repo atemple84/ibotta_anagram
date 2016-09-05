@@ -1,0 +1,708 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateWords (20160904215311)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20160904215311)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20160904215311)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20160904215311)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "words" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar(255) NOT NULL, "wordsize" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (6.6ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20160904215311)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "words" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar(255) NOT NULL, "wordsize" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (6.6ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20160904215311)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "words" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar(255) NOT NULL, "wordsize" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20160904215311')[0m
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateWords (20160904215311)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "words"[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20160904215311'
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20160904215311)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "words" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar(255) NOT NULL, "wordsize" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_words_on_word_and_wordsize" ON "words" ("word", "wordsize")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160904215311')
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateWords (20160904215311)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP INDEX "index_words_on_word_and_wordsize"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "words"
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20160904215311'[0m
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20160904215311)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "words" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar(255) NOT NULL, "wordsize" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_words_on_word_and_wordsize" ON "words" ("word", "wordsize")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160904215311')
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:09:09 -0600
+Connecting to database specified by database.yml
+
+ActionController::RoutingError (No route matches [POST] "/words.json"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:12:22 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.8ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:14:17 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:15:34 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:18:26 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:24:22 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:28:32 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of ActiveSupport::HashWithIndifferentAccess into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:29:19 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of ActiveSupport::HashWithIndifferentAccess into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:29:41 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of ActiveSupport::HashWithIndifferentAccess into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:30:04 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of ActiveSupport::HashWithIndifferentAccess into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:30:52 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.7ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:31:06 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:33:26 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:35:00 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/words_controller.rb:21:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:36:15 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of ActiveSupport::HashWithIndifferentAccess into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:37:02 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of ActiveSupport::HashWithIndifferentAccess into String):
+  app/controllers/words_controller.rb:22:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:39:43 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:40:15 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/words_controller.rb:21:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.8ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:40:47 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+TypeError (no implicit conversion of ActiveSupport::HashWithIndifferentAccess into String):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:42:17 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:47:42 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:48:13 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 18:50:48 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 19:09:28 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"words"=>["read", "dear", "dare"], "word"=>{}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 19:10:37 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"words"=>["read", "dear", "dare"], "word"=>{}}
+WARNING: Can't verify CSRF token authenticity
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 19:12:26 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"{ \"words\": "=>{"\"read\", \"dear\", \"dare\""=>{" }"=>nil}}}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/words_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 19:15:38 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"words"=>["read", "dear", "dare"], "word"=>{}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mWord Exists (0.1ms)[0m  SELECT 1 AS one FROM "words" WHERE ("words"."word" = 'read' AND "words"."wordsize" IS NULL) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mWord Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "words" WHERE ("words"."word" = 'dear' AND "words"."wordsize" IS NULL) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mWord Exists (0.1ms)[0m  SELECT 1 AS one FROM "words" WHERE ("words"."word" = 'dare' AND "words"."wordsize" IS NULL) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 44ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 19:31:02 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#create as JSON
+  Parameters: {"words"=>["read", "dear", "dare"], "word"=>{}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mWord Exists (0.1ms)[0m  SELECT 1 AS one FROM "words" WHERE ("words"."word" = 'read' AND "words"."wordsize" = 4) LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "words" ("created_at", "updated_at", "word", "wordsize") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 05 Sep 2016 01:31:03 UTC +00:00], ["updated_at", Mon, 05 Sep 2016 01:31:03 UTC +00:00], ["word", "read"], ["wordsize", 4]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mWord Exists (0.1ms)[0m  SELECT 1 AS one FROM "words" WHERE ("words"."word" = 'dear' AND "words"."wordsize" = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "updated_at", "word", "wordsize") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 05 Sep 2016 01:31:03 UTC +00:00], ["updated_at", Mon, 05 Sep 2016 01:31:03 UTC +00:00], ["word", "dear"], ["wordsize", 4]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mWord Exists (0.1ms)[0m  SELECT 1 AS one FROM "words" WHERE ("words"."word" = 'dare' AND "words"."wordsize" = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "updated_at", "word", "wordsize") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 05 Sep 2016 01:31:03 UTC +00:00], ["updated_at", Mon, 05 Sep 2016 01:31:03 UTC +00:00], ["word", "dare"], ["wordsize", 4]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 34ms
+
+ActionView::MissingTemplate (Missing template words/create, application/create with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/adamtemple/rubyProjects/anagram/app/views"
+):
+  actionpack (3.2.12) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.12) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.12) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.12) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.12) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.12) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.12) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.12) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.12) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.12) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.12) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.12) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.12) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.12) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.12) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.12) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (3.2.12) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.12) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.12) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.12) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.12) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.12) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.12) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.12) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.12) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.12) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:414:in `_run__3705694977159230109__process_action__2247507735728557567__callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.12) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.12) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.12) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.12) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.12) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.12) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.12) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.12) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.12) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.12) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.12) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.12) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.12) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.12) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.12) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.12) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.12) lib/action_dispatch/routing/route_set.rb:601:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.12) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.12) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:405:in `_run__753585655587872556__call__80418307080678237__callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.12) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.3ms)
+
+
+Started DELETE "/words.json" for 127.0.0.1 at 2016-09-04 19:33:43 -0600
+Connecting to database specified by database.yml
+
+ActionController::RoutingError (No route matches [DELETE] "/words.json"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started DELETE "/words.json" for 127.0.0.1 at 2016-09-04 19:38:31 -0600
+Connecting to database specified by database.yml
+
+ActionController::RoutingError (No route matches [DELETE] "/words.json"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+Connecting to database specified by database.yml
+
+
+Started DELETE "/words/dear.json" for 127.0.0.1 at 2016-09-04 19:45:36 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#destroy as JSON
+  Parameters: {"id"=>"dear"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mWord Load (0.2ms)[0m  [1mSELECT "words".* FROM "words" WHERE "words"."word" = 'dear' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mDELETE FROM "words" WHERE "words"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 200 OK in 32ms (ActiveRecord: 3.8ms)
+
+
+Started DELETE "/words.json" for 127.0.0.1 at 2016-09-04 20:02:40 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#destroy_all as JSON
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mWord Load (0.1ms)[0m  [1mSELECT "words".* FROM "words" [0m
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (undefined method `destroy' for #<Enumerator:0x007f8495dd4de0>):
+  app/controllers/words_controller.rb:44:in `destroy_all'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started DELETE "/words.json" for 127.0.0.1 at 2016-09-04 20:03:34 -0600
+Connecting to database specified by database.yml
+Processing by WordsController#destroy_all as JSON
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mWord Load (0.1ms)[0m  [1mSELECT "words".* FROM "words" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mDELETE FROM "words" WHERE "words"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "words" WHERE "words"."id" = ?  [["id", 4]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 22ms (ActiveRecord: 6.6ms)
+
+
+Started POST "/words.json" for 127.0.0.1 at 2016-09-04 20:07:43 -0600
+Processing by WordsController#create as JSON
+  Parameters: {"words"=>["read", "dear", "dare"], "word"=>{}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mWord Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "words" WHERE ("words"."word" = 'read' AND "words"."wordsize" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "words" ("created_at", "updated_at", "word", "wordsize") VALUES (?, ?, ?, ?)  [["created_at", Mon, 05 Sep 2016 02:07:43 UTC +00:00], ["updated_at", Mon, 05 Sep 2016 02:07:43 UTC +00:00], ["word", "read"], ["wordsize", 4]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mWord Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "words" WHERE ("words"."word" = 'dear' AND "words"."wordsize" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "words" ("created_at", "updated_at", "word", "wordsize") VALUES (?, ?, ?, ?)  [["created_at", Mon, 05 Sep 2016 02:07:43 UTC +00:00], ["updated_at", Mon, 05 Sep 2016 02:07:43 UTC +00:00], ["word", "dear"], ["wordsize", 4]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mWord Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "words" WHERE ("words"."word" = 'dare' AND "words"."wordsize" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "updated_at", "word", "wordsize") VALUES (?, ?, ?, ?)  [["created_at", Mon, 05 Sep 2016 02:07:43 UTC +00:00], ["updated_at", Mon, 05 Sep 2016 02:07:43 UTC +00:00], ["word", "dare"], ["wordsize", 4]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 27ms (ActiveRecord: 10.7ms)
+
+
+Started DELETE "/words.json" for 127.0.0.1 at 2016-09-04 20:08:35 -0600
+Processing by WordsController#destroy_all as JSON
+  Parameters: {"word"=>{}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mWord Load (0.2ms)[0m  SELECT "words".* FROM "words" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "words" WHERE "words"."id" = ?  [["id", 5]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "words" WHERE "words"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "words" WHERE "words"."id" = ?  [["id", 7]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 6ms (ActiveRecord: 2.9ms)
