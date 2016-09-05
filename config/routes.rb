@@ -1,6 +1,7 @@
 Anagram::Application.routes.draw do
   resources :words, :defaults => { :format => 'json' }
   
+  get 'anagrams/:id' => 'words#anagram'
   delete 'words' => 'words#destroy_all'
   
   # The priority is based upon order of creation:
