@@ -108,4 +108,49 @@ class WordsControllerTest < ActionController::TestCase
     responsejson = JSON.parse(@response.body)
     assert_equal(responsejson['anagrams'],["dare"])
   end
+  
+  test "should get word count" do
+    get :count, format: 'json'
+    assert_response :success
+    assert_equal(200, @response.status)
+
+    responsejson = JSON.parse(@response.body)
+    assert_equal(responsejson['count'], 3)
+  end
+
+  test "should get word min" do
+    get :min, format: 'json'
+    assert_response :success
+    assert_equal(200, @response.status)
+
+    responsejson = JSON.parse(@response.body)
+    assert_equal(responsejson['min'], 4)
+  end
+
+  test "should get word max" do
+    get :max, format: 'json'
+    assert_response :success
+    assert_equal(200, @response.status)
+
+    responsejson = JSON.parse(@response.body)
+    assert_equal(responsejson['max'], 4)
+  end
+
+  test "should get word median" do
+    get :median, format: 'json'
+    assert_response :success
+    assert_equal(200, @response.status)
+
+    responsejson = JSON.parse(@response.body)
+    assert_equal(responsejson['median'], 4)
+  end
+
+  test "should get word average" do
+    get :average, format: 'json'
+    assert_response :success
+    assert_equal(200, @response.status)
+
+    responsejson = JSON.parse(@response.body)
+    assert_equal(responsejson['average'], 4)
+  end
 end

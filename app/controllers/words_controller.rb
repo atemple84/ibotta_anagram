@@ -73,4 +73,96 @@ class WordsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /count.json
+  def count
+    wordcount = Word.all.size
+    unless wordcount < 1
+      res = {'count' => wordcount}
+    end
+    respond_to do |format|
+      format.json { render json: res }
+    end
+  end
+  
+  # Get /count/min.json
+  def min
+    words = Word.all
+    min = nil
+    words.each do |word|
+      if min.nil? || min > word.wordsize
+        min = word.wordsize
+      end
+    end
+    
+    unless min.nil? || min < 1
+      res = {'min' => min}
+    end
+    
+    respond_to do |format|
+      format.json { render json: res }
+    end
+  end
+
+  # Get /count/max.json
+  def max
+    words = Word.all
+    max = nil
+    words.each do |word|
+      if max.nil? || max < word.wordsize
+        max = word.wordsize
+      end
+    end
+    
+    unless max.nil? || max < 1
+      res = {'max' => max}
+    end
+    
+    respond_to do |format|
+      format.json { render json: res }
+    end
+  end
+
+  # Get /count/median.json
+  def median
+    words = Word.all
+    wordcount = []
+    words.each do |word|
+      wordcount << word.wordsize
+    end
+    
+    unless wordcount.empty?
+      if wordcount.size % 2 > 0
+        middleleftindex = wordcount.size / 2
+        middlerightindex = middleleftindex + 1
+        median = (wordcount[middleleftindex] + wordcount[middlerightindex]) / 2
+        res = {'median' => median}
+      else
+        wordindex = wordcount.size / 2
+        res = {'median' => wordcount[wordindex]}
+      end
+    end
+
+    respond_to do |format|
+      format.json { render json: res }
+    end
+  end
+
+  # Get /count/average.json
+  def average
+    words = Word.all
+    wordcounttotal = 0
+    words.each do |word|
+      wordcounttotal += word.wordsize
+    end
+    
+    unless wordcounttotal < 1
+      average = wordcounttotal / words.size
+      res = {'average' => average}
+    end
+
+    respond_to do |format|
+      format.json { render json: res }
+    end
+  end
 end

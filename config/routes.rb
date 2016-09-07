@@ -4,6 +4,12 @@ Anagram::Application.routes.draw do
   get 'anagrams/:id' => 'words#anagram'
   delete 'words' => 'words#destroy_all'
   
+  get 'count' => 'words#count'
+  get 'count/min' => 'words#min'
+  get 'count/max' => 'words#max'
+  get 'count/median' => 'words#median'
+  get 'count/average' => 'words#average'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
