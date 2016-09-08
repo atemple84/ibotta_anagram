@@ -1,0 +1,59 @@
+Starting server:
+=========
+
+This application was created under Rails 3. Just run "rails server," and the server can be accessed at http://localhost:3000. The requests that are functional are:
+- GET /words/<word>.json
+- GET /anagrams/<word>.json
+- GET /anagrams/<word>.json?limit=<num>
+- POST /words.json ' {"words" : ["word1","word2"] }'
+- DELETE /words/<word>.json
+- DELETE /words.json
+- GET /count.json
+- GET /count/min.json
+- GET /count/max.json
+- GET /count/median.json
+- GET /count/average.json
+
+All responses are blank or json.
+
+Data storing:
+=========
+
+I went with SQL database design with two columns (integer:wordsize text:word). Designed to how I envisioned building my lookup table.
+I envisioned a multi map lookup table, using the wordsize as the key, and an array of words as the value that match the word size. This was my way of attempting to cut down on lookup time of words by simply using the referencing word size to retrieve a smaller subset of words to compare against. I went with SQL in the end for simpler Rails design and to not have to manage critical data handling (mutex locking, etc.).
+
+The table details itself is in the single migration file checked in (unique words, and unique index with word size and word). That should resolve any case of duplicate words. Word size is calculated and set automatically through the model class. I also lower cased the word automatically, so the assumption would be all words are in lowercase (this was before I saw the optional step to handle Proper Nouns. Oops).
+
+Code Structure:
+=========
+
+This application was designed to be just an API, so there was no consideration for a view. The model is word, and controller is word. The model was basic retrieval of the word as string, and wordsize as integer. Word is unique, and both values cannot be null before storage to database.
+
+The word controller is where a bulk of the code was written to handle all the routes and data retrieval. I was able to use the same controller even for the /anagrams call, by routing it to word controller. I attempted to minimize the majority of the logic in the controller to basic lookup concepts (with exception of the math routes, since they were simple enough to keep there).
+
+I added a helper for the word controller where I put the logic for finding and building anagrams.
+
+I also added unit tests for all reachable functions, which can be found in the test folders. This included a basic test yml with the examples provided from the original project requirements.
+
+Anagram Solution:
+=========
+
+To get the anagram, I first needed to make sure the word count was the same (handled through the db structure), then skip over the same word, then do the actual compare. My first consideration was to figure out the best sorting algorithm to use on both the comparative word and the words I'm comparing against. This would then allow me to do an exact string compare with the letters sorted. Instead I decided to build a hash map with the number of times the letters appeared in a word. I first built my comparative hash map, then directly compared both hash maps together after building each hash map I was comparing against. The ordering of building the hash map didn't matter at that point.
+
+Test:
+=========
+
+You can run the provided project test client, or you can run "rake test" to run through all the unit tests I've made. It essentially matches the unit tests from the project test client, plus some others to verify every single publicly available function, including the math routes.
+
+Other Considerations:
+=========
+
+Due to some complications with trying to get benchmarking test running in Rails 3, I was not able to get proper benchmark tests written, but you can see the progress I was making as is. The idea was to setup and teardown the loading of the entire dictionary.txt file into the database, then I'd write a few lookup queries, and benchmark against that. I already have the logic for reading and parsing the file (and storing into the db), but it's not implemented yet.
+
+I decided to set this up in Ruby on Rails instead of C++ for ease of setting up a web server, and for better compliance for Ibotta to test and run and understand the code. There would of been many manual steps and frameworks I'd have to set up for it to function in C++ that would of costed me a lot more time than just generating a rails project.
+
+There are quite a few differences between Rails 3 and Rails 5, and I would of done more to start this project in Rails 5 if I new there would be so many differences, including describing accessors to model data. One of my biggest lessons learned is to make sure I know exactly what environment I'm working in, and to know from the very start how to generate the project with that in mind.
+
+I did generate the project with the --api command to try and clean up some of the extra clutter, but I still feel there was extra junk added into the project (ex: application.rb). I believe Rails 5 does a better job of this.
+
+The POST curl commands would not work appropriately when I tried to parse the params[], UNLESS I specifically added -H "Accept: application/json" -H "Content-type: application/json" to the curl command. The GET and DELETE curl commands worked fine without change.
